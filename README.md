@@ -5,7 +5,7 @@ This page contains the R analysis code used for the paper and the example analys
 
 data_setup.R: load and combine the three cohort datasets and harmonise the variable names for analysis.
 
-polynomials_example.R: fit LME models with linear and polynomial functions and produce figure 1.
+polynomials_example.R: fit LME models with linear and polynomial functions (figure 1).
 
 descriptive_analysis.R: run descriptive analysis, including figure 2 (scatterplots and lineplots) and supplementary tables on numbers of participants 
 
