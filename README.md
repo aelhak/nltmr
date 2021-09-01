@@ -15,7 +15,7 @@ This page contains the R analysis code used for the paper and the example analys
 
 **sitar_models.R**: fit SITAR models, calculate model BIC, calculate variance explained, calculate predicted trajectories, plot estimated trajectories and velocities (Fig 5), calculate mean age at peak velocity (for Table 4).
 
-**overlayed_trajectories_plot.R**: create figure 6 showing trajectories from the LME spline and SITAR models in the same plot (Fig 6).
+**overlayed_trajectories_plot.R**: create plot showing trajectories from the LME spline and SITAR models in the same plot (Fig 6).
 
 **growth_mixture_models.R**: fit 1-5 CLclass GMM's and calculate fit statistics and plot trajectories for each model (for supplementary file), plot trajectories from the selected models (Fig 7) and posterior probabilities (for supplement).
 
