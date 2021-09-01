@@ -3,28 +3,28 @@ Elhakeem et al. https://www.medrxiv.org/content/10.1101/2021.05.26.21257519v1
 
 This page contains the R analysis code used for the paper and the example analysis dataset, the files are described below:
 
-data_setup.R: load and combine the three cohort datasets and harmonise the variable names for analysis.
+**data_setup.R**: load and combine the three cohort datasets and harmonise the variable names for analysis.
 
-polynomials_example.R: fit LME models with linear and polynomial functions (Fig 1).
+**polynomials_example.R**: fit LME models with linear and polynomial functions (Fig 1).
 
-descriptive_analysis.R: run descriptive analysis, including Fig 2 (scatterplots and lineplots) and supplementary tables on numbers of participants 
+**descriptive_analysis.R**: run descriptive analysis, including Fig 2 (scatterplots and lineplots) and supplementary tables on numbers of participants 
 
-linear_spline_lme_models.R: fit LME models with linear spline functions, calculate model BIC, calculate residuals for best models, calculate predicted trajectories, calculate estimated velocities (for Table 3), plot trajectories (Fig 3).
+**linear_spline_lme_models.R**: fit LME models with linear spline functions, calculate model BIC, calculate residuals for best models, calculate predicted trajectories, calculate estimated velocities (for Table 3), plot trajectories (Fig 3).
 
-natural_cubic_spline_lme_models.R: fit LME models with natural cubic spline functions, calculate model BIC, calculate residuals for best models, calculate predicted trajectories, plot estimated trajectories and velocities (Fig 4), calculate mean age at peak velocity (for Table 4).
+**natural_cubic_spline_lme_models.R**: fit LME models with natural cubic spline functions, calculate model BIC, calculate residuals for best models, calculate predicted trajectories, plot estimated trajectories and velocities (Fig 4), calculate mean age at peak velocity (for Table 4).
 
-sitar_models.R: fit SITAR models, calculate model BIC, calculate variance explained, calculate predicted trajectories, plot estimated trajectories and velocities (Fig 5), calculate mean age at peak velocity (for Table 4).
+**sitar_models.R**: fit SITAR models, calculate model BIC, calculate variance explained, calculate predicted trajectories, plot estimated trajectories and velocities (Fig 5), calculate mean age at peak velocity (for Table 4).
 
-overlayed_trajectories_plot.R: create figure 6 showing trajectories from the LME spline and SITAR models in the same plot (Fig 6).
+**overlayed_trajectories_plot.R**: create figure 6 showing trajectories from the LME spline and SITAR models in the same plot (Fig 6).
 
-growth_mixture_models.R: fit 1-5 CLclass GMM's and calculate fit statistics and plot trajectories for each model (for supplementary file), plot trajectories from the selected models (Fig 7) and posterior probabilities (for supplement).
+**growth_mixture_models.R**: fit 1-5 CLclass GMM's and calculate fit statistics and plot trajectories for each model (for supplementary file), plot trajectories from the selected models (Fig 7) and posterior probabilities (for supplement).
 
-gamm_example.R: fit GAMM to PBMAS cohort and plot mean trajectory and velocity curves (Fig 8)
+**gamm_example.R**: fit GAMM to PBMAS cohort and plot mean trajectory and velocity curves (Fig 8)
 
-lme_velocity_curves_example.R: fit LME natural cubic spline models with increasing number of knots for the random spline and plot velocity curves (Fig 9).
+**lme_velocity_curves_example.R**: fit LME natural cubic spline models with increasing number of knots for the random spline and plot velocity curves (Fig 9).
 
-multicohort_sitar_models.R: fit SITAR models to all cohorts combined and plot trajectories and calculate mean age at peak vlocity (Fig 10).
+**multicohort_sitar_models.R**: fit SITAR models to all cohorts combined and plot trajectories and calculate mean age at peak vlocity (Fig 10).
 
-synth_cohort.csv: example dataset simulated from LME natural cubic spline model predcitions in PBMAS males and females. 
+**synth_cohort.csv**: example dataset simulated from LME natural cubic spline model predcitions in PBMAS males and females. 
 
-getting_started_ex_dat.R: shows how to load the example dataset for practicing plots and models.
+**getting_started_ex_dat.R**: shows how to load the example dataset for practicing plots and models.
