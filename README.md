@@ -5,23 +5,25 @@ This page contains the R analysis code used for the paper and the example analys
 
 data_setup.R: load and combine the three cohort datasets and harmonise the variable names for analysis.
 
-polynomials_example.R: fit LME models with linear and polynomial functions (figure 1).
+polynomials_example.R: fit LME models with linear and polynomial functions (Fig 1).
 
-descriptive_analysis.R: run descriptive analysis, including figure 2 (scatterplots and lineplots) and supplementary tables on numbers of participants 
+descriptive_analysis.R: run descriptive analysis, including Fig 2 (scatterplots and lineplots) and supplementary tables on numbers of participants 
 
-linear_spline_lme_models.R: fit LME models with linear spline functions, calculate model BIC, caluclate residuals for best models, calculate predicted trajectories, calculate estimated velocities (for table 3), plot trajectories (figure 3).
+linear_spline_lme_models.R: fit LME models with linear spline functions, calculate model BIC, calculate residuals for best models, calculate predicted trajectories, calculate estimated velocities (for Table 3), plot trajectories (Fig 3).
 
-natural_cubic_spline_lme_models.R: fit LME models with natural cubic spline functions, calculate model BIC, caluclate residuals for best models, calculate predicted trajectories, plot estimated trajectories and velocities (figure 4), calculate mean age at peak velocity (for table 4).
+natural_cubic_spline_lme_models.R: fit LME models with natural cubic spline functions, calculate model BIC, calculate residuals for best models, calculate predicted trajectories, plot estimated trajectories and velocities (Fig 4), calculate mean age at peak velocity (for Table 4).
 
-sitar_models.R: fit SITAR models, calculate model BIC, caluclate variance explained, calculate predicted trajectories, plot estimated trajectories and velocities (figure 5), calculate mean age at peak velocity (for table 4).
+sitar_models.R: fit SITAR models, calculate model BIC, calculate variance explained, calculate predicted trajectories, plot estimated trajectories and velocities (Fig 5), calculate mean age at peak velocity (for Table 4).
 
-overlayed_trajectories_plot.R: create figure 6 showing trajectories from the LME spline and SITAR models in the same plot.
+overlayed_trajectories_plot.R: create figure 6 showing trajectories from the LME spline and SITAR models in the same plot (Fig 6).
 
-growth_mixture_models.R: fit 1-5 CLclass GMM's and calculate fit statistics and plot trajectories for each model (for supplementary file), plot trajectories from the selected models (figure 7) and posterior probabilities (for supplement).
+growth_mixture_models.R: fit 1-5 CLclass GMM's and calculate fit statistics and plot trajectories for each model (for supplementary file), plot trajectories from the selected models (Fig 7) and posterior probabilities (for supplement).
 
-lme_velocity_curves_example.R: fit LME natural cubic spline models with increasing number of knots for the random spline and plot velocity curves (figure 8).
+gamm_example.R: fit GAMM to PBMAS cohort and plot mean trajectory and velocity curves (Fig 8)
 
-multicohort_sitar_models.R: fit SITAR models to all cohorts combined and plot trajectories and calcualte mean age at peak vlocity (figure 9).
+lme_velocity_curves_example.R: fit LME natural cubic spline models with increasing number of knots for the random spline and plot velocity curves (Fig 9).
+
+multicohort_sitar_models.R: fit SITAR models to all cohorts combined and plot trajectories and calculate mean age at peak vlocity (Fig 10).
 
 synth_cohort.csv: example dataset simulated from LME natural cubic spline model predcitions in PBMAS males and females. 
 
