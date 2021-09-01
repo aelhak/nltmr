@@ -3,7 +3,7 @@ Elhakeem et al. https://www.medrxiv.org/content/10.1101/2021.05.26.21257519v1
 
 This page contains the R analysis code used for the paper and the example analysis dataset, the files are described below:
 
-**data_setup.R**: load and combine the three cohort datasets and harmonise the variable names for analysis.
+**data_setup.R**: script used to load and combine the three cohort datasets and harmonise the variable names for analysis.
 
 **polynomials_example.R**: fit LME models with linear and polynomial functions (Fig 1).
 
