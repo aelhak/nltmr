@@ -29,7 +29,7 @@ pbmas_f <- bmc_all %>% filter(cohort == "PBMAS" & sex == "Females") %>% drop_na(
 #### FIGURE 2: SCATTERPLOT & LINEPLOTS OF OBSERVED BMC ####
 
 bmc_scatterplot <- ggplot(
-  data = subset(bmc_all, !is.na(tblh_bmc_)), aes(x = age, y = tblh_bmc_)) + theme_bw() +
+  data = subset(bmc_all, !is.na(tblh_bmc_)), aes(x = age, y = tblh_bmc_)) + theme_classic() +
   geom_point(aes(colour = cohort), size = 0.2) + facet_wrap(sex ~ ., strip.position="top") + 
   theme(legend.title = element_blank(), legend.position = "top", panel.grid.minor.x = element_blank()) +
   scale_y_continuous(breaks=seq(500,4500,1000)) + ylab('BMC - grams') + xlab("Age - years") +
@@ -47,10 +47,9 @@ bmc_lineplot <- ggplot(data = subset(bmc_all, !is.na(tblh_bmc_)), aes(x = age, y
 
 graphics.off()
 pdf("results/Fig2_descr.pdf",
-    width=6, height=8)
+    width = 5, height = 6.3)
 
-(bmc_scatterplot / bmc_lineplot) + plot_layout(
-  widths = c(1, 2), heights = unit(c(4, 6), c('cm', 'null')))
+(bmc_scatterplot / bmc_lineplot) + plot_layout(heights = c(1, 2.3))
 
 dev.off() 
 
