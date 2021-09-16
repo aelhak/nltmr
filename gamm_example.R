@@ -2,7 +2,7 @@
 # Using linear and natural cubic splines, SITAR, and latent trajectory models to characterise 
 # nonlinear longitudinal growth trajectories in cohort studies
 #
-# Elhakeem et al
+# Elhakeem et al: https://www.medrxiv.org/content/10.1101/2021.05.26.21257519v1
 #
 # GAMM EXAMPLE IN PBMAS COHORT
 #
@@ -59,11 +59,9 @@ gamm_pbmas_m_d1 <- derivatives(gamm_pbmas_m$gam, order = 1, type = "central")
 gamm_pbmas_f_d1 <- derivatives(gamm_pbmas_f$gam, order = 1, type = "central")
 
 gamm_pbmas_vel_plot <- ggplot(
-  data = gamm_pbmas_m_d1, aes(x = data, y = derivative, ymin = lower, ymax = upper)) +
+  data = gamm_pbmas_m_d1, aes(x = data, y = derivative)) +
   geom_line(aes(col = "Males"), data = gamm_pbmas_m_d1) + 
   geom_line(aes(col = "Females"), data = gamm_pbmas_f_d1) + 
-  geom_ribbon(data = gamm_pbmas_m_d1, alpha=0.1) + 
-  geom_ribbon(data = gamm_pbmas_f_d1, alpha=0.1) +
   scale_colour_manual(name="legend", values=c("red2", "black")) + 
   geom_vline(xintercept = 13.703975, linetype="dotted", color = "black") +
   geom_vline(xintercept = 12.218093, linetype="dotted", color = "red2") + theme_classic() +
