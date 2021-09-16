@@ -2,7 +2,7 @@
 # Using linear and natural cubic splines, SITAR, and latent trajectory models to characterise 
 # nonlinear longitudinal growth trajectories in cohort studies
 #
-# Elhakeem et al
+# Elhakeem et al: https://www.medrxiv.org/content/10.1101/2021.05.26.21257519v1
 #
 # LATENT TRAJECTORY MODELS (GROWTH MIXTURE MODELS)
 #
@@ -64,7 +64,7 @@ ltm_alsp_f_plot <- ggplot(
   data = ltm_alsp_f_pred, aes(x = age)) +
   geom_line(aes(y = Ypred_class1, col = "Class 1 (58.3%)")) +
   geom_line(aes(y = Ypred_class2, col = "Class 2 (13.3%)")) + 
-  geom_line(aes(y = Ypred_class3, col = "Class 3 (28.4%)")) + theme_bw() +
+  geom_line(aes(y = Ypred_class3, col = "Class 3 (28.4%)")) + theme_classic() +
   geom_ribbon(aes(ymin = lower.Ypred_class1, ymax = upper.Ypred_class1), alpha=0.1) +
   geom_ribbon(aes(ymin = lower.Ypred_class2, ymax = upper.Ypred_class2), alpha=0.1) +
   geom_ribbon(aes(ymin = lower.Ypred_class3, ymax = upper.Ypred_class3), alpha=0.1) +
@@ -72,7 +72,7 @@ ltm_alsp_f_plot <- ggplot(
   scale_y_continuous(breaks=seq(500, 3500, 500), limits=c(500, 3500)) + 
   labs(x = 'Age - years', y = 'BMC - grams') + scale_color_brewer(palette = "Dark2") + 
   theme(legend.title = element_blank(), 
-        legend.position = c(0.19, 0.80),
+        legend.position = c(0.20, 0.80),
         legend.background = element_blank(),
         legend.box.background = element_rect(
           fill = "white", colour = "black")) +
@@ -124,14 +124,14 @@ postprob(ltm_alsp_m_best)
 ltm_alsp_m_plot <- ggplot(
   data = ltm_alsp_m_pred, aes(x = age)) +
   geom_line(aes(y = Ypred_class1, col = "Class 1: (34.4%)")) +
-  geom_line(aes(y = Ypred_class2, col = "Class 2: (65.6%)")) + theme_bw() +
+  geom_line(aes(y = Ypred_class2, col = "Class 2: (65.6%)")) + theme_classic() +
   geom_ribbon(aes(ymin = lower.Ypred_class1, ymax = upper.Ypred_class1), alpha=0.1) +
   geom_ribbon(aes(ymin = lower.Ypred_class2, ymax = upper.Ypred_class2), alpha=0.1) +
   scale_x_continuous(breaks=c(4, 8, 12, 16, 20, 24, 28, 32, 36, 40), limits=c(4, 40)) + 
   scale_y_continuous(breaks=seq(500, 3500, 500), limits=c(500, 3500)) + 
   labs(x = 'Age - years', y = 'BMC - grams') + scale_color_brewer(palette = "Dark2") + 
   theme(legend.title = element_blank(), 
-        legend.position = c(0.19, 0.85),
+        legend.position = c(0.20, 0.86),
         legend.background = element_blank(),
         legend.box.background = element_rect(
           fill = "white", colour = "black")) +
@@ -184,7 +184,7 @@ ltm_bmdcs_f_plot <- ggplot(
   data = ltm_bmdcs_f_pred, aes(x = age)) +
   geom_line(aes(y = Ypred_class1, col = "Class 1 (20.7%)")) +
   geom_line(aes(y = Ypred_class2, col = "Class 2 (19.1%)")) +
-  geom_line(aes(y = Ypred_class3, col = "Class 3 (60.2%)")) + theme_bw() +
+  geom_line(aes(y = Ypred_class3, col = "Class 3 (60.2%)")) + theme_classic() +
   geom_ribbon(aes(ymin = lower.Ypred_class1, ymax = upper.Ypred_class1), alpha=0.1) +
   geom_ribbon(aes(ymin = lower.Ypred_class2, ymax = upper.Ypred_class2), alpha=0.1) +
   geom_ribbon(aes(ymin = lower.Ypred_class3, ymax = upper.Ypred_class3), alpha=0.1) +
@@ -192,7 +192,7 @@ ltm_bmdcs_f_plot <- ggplot(
   scale_y_continuous(breaks=seq(500, 3500, 500), limits=c(500, 3500)) + 
   labs(x = 'Age - years', y = 'BMC - grams') + scale_color_brewer(palette = "Dark2") + 
   theme(legend.title = element_blank(), 
-        legend.position = c(0.19, 0.80),
+        legend.position = c(0.20, 0.80),
         legend.background = element_blank(),
         legend.box.background = element_rect(
           fill = "white", colour = "black")) +
@@ -244,14 +244,14 @@ postprob(ltm_bmdcs_m_best)
 ltm_bmdcs_m_plot <- ggplot(
   data = ltm_bmdcs_m_pred, aes(x = age)) +
   geom_line(aes(y = Ypred_class1, col = "Class 1 (37.8%)")) +
-  geom_line(aes(y = Ypred_class2, col = "Class 2 (62.2%)")) + theme_bw() +
+  geom_line(aes(y = Ypred_class2, col = "Class 2 (62.2%)")) + theme_classic() +
   geom_ribbon(aes(ymin = lower.Ypred_class1, ymax = upper.Ypred_class1), alpha=0.1) +
   geom_ribbon(aes(ymin = lower.Ypred_class2, ymax = upper.Ypred_class2), alpha=0.1) +
   scale_x_continuous(breaks=c(4, 8, 12, 16, 20, 24, 28, 32, 36, 40), limits=c(4, 40)) + 
   scale_y_continuous(breaks=seq(500, 3500, 500), limits=c(500, 3500)) + 
   labs(x = 'Age - years', y = 'BMC - grams') + scale_color_brewer(palette = "Dark2") + 
   theme(legend.title = element_blank(), 
-        legend.position = c(0.19, 0.85),
+        legend.position = c(0.20, 0.85),
         legend.background = element_blank(),
         legend.box.background = element_rect(
           fill = "white", colour = "black")) +
@@ -305,7 +305,7 @@ ltm_pbmas_f_plot <- ggplot(
   geom_line(aes(y = Ypred_class1, col = "Class 1 (39.4%)")) +
   geom_line(aes(y = Ypred_class2, col = "Class 2 (15.0%)")) +
   geom_line(aes(y = Ypred_class3, col = "Class 3 (32.3%)")) +
-  geom_line(aes(y = Ypred_class4, col = "Class 4 (13.4%)")) + theme_bw() +
+  geom_line(aes(y = Ypred_class4, col = "Class 4 (13.4%)")) + theme_classic() +
   geom_ribbon(aes(ymin = lower.Ypred_class1, ymax = upper.Ypred_class1), alpha=0.1) +
   geom_ribbon(aes(ymin = lower.Ypred_class2, ymax = upper.Ypred_class2), alpha=0.1) +
   geom_ribbon(aes(ymin = lower.Ypred_class3, ymax = upper.Ypred_class3), alpha=0.1) +
@@ -314,7 +314,7 @@ ltm_pbmas_f_plot <- ggplot(
   scale_y_continuous(breaks=seq(500, 3500, 500), limits=c(500, 3500)) + 
   labs(x = 'Age - years', y = 'BMC - grams') + scale_color_brewer(palette = "Dark2") + 
   theme(legend.title = element_blank(), 
-        legend.position = c(0.19, 0.75),
+        legend.position = c(0.20, 0.75),
         legend.background = element_blank(),
         legend.box.background = element_rect(
           fill = "white", colour = "black")) +
@@ -367,7 +367,7 @@ ltm_pbmas_m_plot <- ggplot(
   data = ltm_pbmas_m_pred, aes(x = age)) +
   geom_line(aes(y = Ypred_class1, col = "Class 1 (37.5%)")) +
   geom_line(aes(y = Ypred_class2, col = "Class 2 (35.7%)")) +
-  geom_line(aes(y = Ypred_class3, col = "Class 3 (26.8%)")) + theme_bw() +
+  geom_line(aes(y = Ypred_class3, col = "Class 3 (26.8%)")) + theme_classic() +
   geom_ribbon(aes(ymin = lower.Ypred_class1, ymax = upper.Ypred_class1), alpha=0.1) +
   geom_ribbon(aes(ymin = lower.Ypred_class2, ymax = upper.Ypred_class2), alpha=0.1) +
   geom_ribbon(aes(ymin = lower.Ypred_class3, ymax = upper.Ypred_class3), alpha=0.1) +
@@ -375,7 +375,7 @@ ltm_pbmas_m_plot <- ggplot(
   scale_y_continuous(breaks=seq(500, 3500, 500), limits=c(500, 3500)) + 
   labs(x = 'Age - years', y = 'BMC - grams') + scale_color_brewer(palette = "Dark2") + 
   theme(legend.title = element_blank(), 
-        legend.position = c(0.19, 0.80),
+        legend.position = c(0.20, 0.80),
         legend.background = element_blank(),
         legend.box.background = element_rect(
           fill = "white", colour = "black")) +
