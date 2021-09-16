@@ -2,7 +2,7 @@
 # Using linear and natural cubic splines, SITAR, and latent trajectory models to characterise 
 # nonlinear longitudinal growth trajectories in cohort studies
 #
-# Elhakeem et al
+# Elhakeem et al: https://www.medrxiv.org/content/10.1101/2021.05.26.21257519v1
 #
 # LINEAR SPLINE LME MODELS
 #
@@ -31,7 +31,7 @@ lslme_alsp_f_resid %>% group_by(visit) %>% select(tblh_bmc_, .fitted, .resid) %>
 print(c(min(alsp_f$age), attr(elspline(alsp_f$age, 7), "knots"), max(alsp_f$age)))
 as.data.frame(tidy(lslme_alsp_f_best, conf.int = T))
 
-(alsp_ls_f_pred <- data.frame(age = seq(min(alsp_f$age), max(alsp_f$age), length = 50)))
+(alsp_ls_f_pred <- data.frame(age = seq(min(alsp_f$age), max(alsp_f$age), length = 500)))
 (alsp_ls_f_pred$tblh_bmc_ <- predict(lslme_alsp_f_best, alsp_ls_f_pred, re.form = NA))
 (alsp_ls_f_mm <- model.matrix(terms(lslme_alsp_f_best), alsp_ls_f_pred))
 (alsp_ls_f_pred$se <- sqrt(diag(alsp_ls_f_mm %*% vcov(lslme_alsp_f_best) %*% t(alsp_ls_f_mm))))
@@ -56,7 +56,7 @@ lslme_alsp_m_resid %>% group_by(visit) %>% select(tblh_bmc_, .fitted, .resid) %>
 print(c(min(alsp_m$age), attr(elspline(alsp_m$age, 5), "knots"), max(alsp_m$age)))
 as.data.frame(tidy(lslme_alsp_m_best, conf.int = T))
 
-(alsp_ls_m_pred <- data.frame(age = seq(min(alsp_m$age), max(alsp_m$age), length = 50)))
+(alsp_ls_m_pred <- data.frame(age = seq(min(alsp_m$age), max(alsp_m$age), length = 500)))
 (alsp_ls_m_pred$tblh_bmc_ <- predict(lslme_alsp_m_best, alsp_ls_m_pred, re.form = NA))
 (alsp_ls_m_mm <- model.matrix(terms(lslme_alsp_m_best), alsp_ls_m_pred))
 (alsp_ls_m_pred$se <- sqrt(diag(alsp_ls_m_mm %*% vcov(lslme_alsp_m_best) %*% t(alsp_ls_m_mm))))
@@ -81,7 +81,7 @@ lslme_bmdcs_f_resid %>% group_by(visit) %>% select(tblh_bmc_, .fitted, .resid) %
 print(c(min(bmdcs_f$age), attr(elspline(bmdcs_f$age, 6), "knots"), max(bmdcs_f$age)))
 as.data.frame(tidy(lslme_bmdcs_f_best, conf.int = T))
 
-(bmdcs_ls_f_pred <- data.frame(age = seq(min(bmdcs_f$age), max(bmdcs_f$age), length = 50)))
+(bmdcs_ls_f_pred <- data.frame(age = seq(min(bmdcs_f$age), max(bmdcs_f$age), length = 500)))
 (bmdcs_ls_f_pred$tblh_bmc_ <- predict(lslme_bmdcs_f_best, bmdcs_ls_f_pred, re.form = NA))
 (bmdcs_ls_f_mm <- model.matrix(terms(lslme_bmdcs_f_best), bmdcs_ls_f_pred))
 (bmdcs_ls_f_pred$se <- sqrt(diag(bmdcs_ls_f_mm %*% vcov(lslme_bmdcs_f_best) %*% t(bmdcs_ls_f_mm))))
@@ -106,7 +106,7 @@ lslme_bmdcs_m_resid %>% group_by(visit) %>% select(tblh_bmc_, .fitted, .resid) %
 print(c(min(bmdcs_m$age), attr(elspline(bmdcs_m$age, 5), "knots"), max(bmdcs_m$age)))
 as.data.frame(tidy(lslme_bmdcs_m_best, conf.int = T))
 
-(bmdcs_ls_m_pred <- data.frame(age = seq(min(bmdcs_m$age), max(bmdcs_m$age), length = 50)))
+(bmdcs_ls_m_pred <- data.frame(age = seq(min(bmdcs_m$age), max(bmdcs_m$age), length = 500)))
 (bmdcs_ls_m_pred$tblh_bmc_ <- predict(lslme_bmdcs_m_best, bmdcs_ls_m_pred, re.form = NA))
 (bmdcs_ls_m_mm <- model.matrix(terms(lslme_bmdcs_m_best), bmdcs_ls_m_pred))
 (bmdcs_ls_m_pred$se <- sqrt(diag(bmdcs_ls_m_mm %*% vcov(lslme_bmdcs_m_best) %*% t(bmdcs_ls_m_mm))))
@@ -131,7 +131,7 @@ lslme_pbmas_f_resid %>% group_by(visit) %>% select(tblh_bmc_, .fitted, .resid) %
 print(c(min(pbmas_f$age), attr(elspline(pbmas_f$age, 5), "knots"), max(pbmas_f$age)))
 as.data.frame(tidy(lslme_pbmas_f_best, conf.int = T))
 
-(pbmas_ls_f_pred <- data.frame(age = seq(min(pbmas_f$age), max(pbmas_f$age), length = 50)))
+(pbmas_ls_f_pred <- data.frame(age = seq(min(pbmas_f$age), max(pbmas_f$age), length = 500)))
 (pbmas_ls_f_pred$tblh_bmc_ <- predict(lslme_pbmas_f_best, pbmas_ls_f_pred, re.form = NA))
 (pbmas_ls_f_mm <- model.matrix(terms(lslme_pbmas_f_best), pbmas_ls_f_pred))
 (pbmas_ls_f_pred$se <- sqrt(diag(pbmas_ls_f_mm %*% vcov(lslme_pbmas_f_best) %*% t(pbmas_ls_f_mm))))
@@ -156,7 +156,7 @@ lslme_pbmas_m_resid %>% group_by(visit) %>% select(tblh_bmc_, .fitted, .resid) %
 print(c(min(pbmas_m$age), attr(elspline(pbmas_m$age, 7), "knots"), max(pbmas_m$age)))
 as.data.frame(tidy(lslme_pbmas_m_best, conf.int = T))
 
-(pbmas_ls_m_pred <- data.frame(age = seq(min(pbmas_m$age), max(pbmas_m$age), length = 50)))
+(pbmas_ls_m_pred <- data.frame(age = seq(min(pbmas_m$age), max(pbmas_m$age), length = 500)))
 (pbmas_ls_m_pred$tblh_bmc_ <- predict(lslme_pbmas_m_best, pbmas_ls_m_pred, re.form = NA))
 (pbmas_ls_m_mm <- model.matrix(terms(lslme_pbmas_m_best), pbmas_ls_m_pred))
 (pbmas_ls_m_pred$se <- sqrt(diag(pbmas_ls_m_mm %*% vcov(lslme_pbmas_m_best) %*% t(pbmas_ls_m_mm))))
@@ -168,7 +168,7 @@ rm(lslme_pbmas_m, lslme_pbmas_m_bic, pbmas_ls_m_mm, lslme_pbmas_m_resid)
 lspline_plot_fun <- function(data1, data2){ ggplot(
   data = data1, aes(x = age, y = tblh_bmc_, ymin = tblh_bmc_-(1.96*se), ymax = tblh_bmc_+(1.96*se))) +
     geom_line(aes(col = "Males"), data = data1) + geom_line(aes(col = "Females"), data = data2) + 
-    geom_ribbon(data = data1, alpha = 0.1) + geom_ribbon(data = data2, alpha = 0.1) + theme_bw() +
+    geom_ribbon(data = data1, alpha = 0.1) + geom_ribbon(data = data2, alpha = 0.1) + theme_classic() +
     scale_colour_manual(name = "legend", values=c("red2", "black")) +
     scale_x_continuous(breaks=c(4, 8, 12, 16, 20, 24, 28, 32, 36, 40), limits=c(4, 40)) + 
     theme(legend.title = element_blank(), legend.position = c(0.17, 0.84),
@@ -189,7 +189,7 @@ lspline_curve_pbmas <- lspline_plot_fun(data1 = pbmas_ls_m_pred, data2 = pbmas_l
 
 graphics.off()
 pdf("results/Fig3_lsplines.pdf",
-    width = 14, height = 4)
+    width = 12.5, height = 4)
 (lspline_curve_alsp | lspline_curve_bmdcs | lspline_curve_pbmas) 
 dev.off()
 
