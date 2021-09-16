@@ -2,13 +2,13 @@
 # Using linear and natural cubic splines, SITAR, and latent trajectory models to characterise 
 # nonlinear longitudinal growth trajectories in cohort studies
 #
-# Elhakeem et al.
+# Elhakeem et al: https://www.medrxiv.org/content/10.1101/2021.05.26.21257519v1
 #
 # EFFECT OF INCREASING RE KNOTS ON INDIVUDAL VELOCITY CURVES in LME MODEL
 #
 
 library(lme4)
-library(spluti)
+library(spluti) # https://github.com/ZheyuanLi/spluti
 library(splines)
 library(tidyverse)
 library(patchwork)
@@ -62,10 +62,10 @@ nslme_re_ex <- map(c(3, 5, 7), possibly(~ { eval(parse(text = paste0(
       knots = "6 knots"))
 
 graphics.off()
-pdf("results/Fig8_lme_velocity.pdf", width = 3, height = 3.5)
+pdf("results/Fig9_lme_velocity.pdf", width = 3, height = 3.5)
 
 k2_re_plot %>% full_join(k4_re_plot) %>% full_join(k6_re_plot) %>% ggplot(
-  data = ., aes(x = x, y = y, col = id)) + geom_line(size = 0.5) + theme_bw() + 
+  data = ., aes(x = x, y = y, col = id)) + geom_line(size = 0.5) + theme_classic() + 
   facet_grid(knots ~ .) + scale_y_continuous(breaks = seq(0,600,200), limits = c(-50,500)) +
   theme(legend.position = "none") + labs(x = 'Age - years', y = 'BMC growth velocity - grams per year')
 
