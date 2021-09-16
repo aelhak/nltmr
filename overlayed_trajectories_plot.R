@@ -2,7 +2,7 @@
 # Using linear and natural cubic splines, SITAR, and latent trajectory models to characterise 
 # nonlinear longitudinal growth trajectories in cohort studies
 #
-# Elhakeem et al
+# Elhakeem et al: https://www.medrxiv.org/content/10.1101/2021.05.26.21257519v1
 #
 # Overlayed trajectories plot
 #
@@ -13,12 +13,13 @@ library(splines)
 library(sitar)
 
 overlayed_plot_fun <- function(data1, data2, data3){ 
-  ggplot(plot_d(data1), aes(.x, .y)) + geom_line(aes(col = "SITAR Model")) + theme_bw() +
+  ggplot(plot_d(data1), aes(.x, .y)) + geom_line(aes(col = "SITAR Model")) + theme_classic() +
     geom_line(aes(x = age, y = tblh_bmc_, col = "Linear Spline LME Model"), data = data2) + 
     geom_line(aes(x = age, y = tblh_bmc_, col = "Natural Cubic Spline LME Model"), data = data3) +
     scale_x_continuous(breaks=c(4, 8, 12, 16, 20, 24, 28, 32, 36, 40), limits=c(4, 40)) +
-    scale_y_continuous(breaks=seq(500,3500,500), limits=c(500, 3500)) +
-    labs(x = 'Age - years', y = 'BMC - grams') + theme(legend.title = element_blank()) +
+    scale_y_continuous(breaks=seq(500,3500,1000), limits=c(500, 3500)) +
+    labs(x = 'Age - years', y = 'BMC - grams') + theme(
+      legend.title = element_blank(), legend.direction = "vertical") +
     guides(colour = guide_legend(override.aes = list(size = 1))) 
 } 
 
@@ -48,12 +49,11 @@ overlayed_plot_pbmas_m <- overlayed_plot_fun(
 
 graphics.off()
 pdf("results/Fig6_overlayed_traj.pdf",
-    width = 7, height = 8)
+    width = 5, height = 6.5)
 ((overlayed_plot_alsp_f | overlayed_plot_alsp_m) / 
     (overlayed_plot_bmdcs_f | overlayed_plot_bmdcs_m) / 
     (overlayed_plot_pbmas_f | overlayed_plot_pbmas_m)) + 
-  plot_layout(guides = "collect") & 
-  theme(legend.title = element_blank(), legend.position = 'bottom')
+  plot_layout(guides = "collect") & theme(legend.title = element_blank(), legend.position = 'bottom')
 dev.off()
 
 rm(overlayed_plot_fun, overlayed_plot_alsp_f, overlayed_plot_alsp_m, overlayed_plot_bmdcs_f,
