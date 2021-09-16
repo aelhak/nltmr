@@ -2,7 +2,7 @@
 # Using linear and natural cubic splines, SITAR, and latent trajectory models to characterise 
 # nonlinear longitudinal growth trajectories in cohort studies
 #
-# Elhakeem et al
+# Elhakeem et al: https://www.medrxiv.org/content/10.1101/2021.05.26.21257519v1
 
 # POLYNOMIALS EXAMPLE
 
