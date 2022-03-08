@@ -24,6 +24,6 @@ This page contains the R analysis code for the above paper (authors: Elhakeem A,
 
 **multicohort_sitar_models.R**: fit SITAR models to all cohorts combined and plot trajectories and calculate mean age at peak vlocity (Fig 10).
 
-**synth_cohort.csv**: example dataset simulated from LME natural cubic spline model predcitions in PBMAS males and females. 
+**synth_cohort.csv**: example dataset simulated from PBMAS males and PBMAS females data. 
 
 **getting_started_ex_dat.R**: shows how to load the example dataset for practicing plots and models.
