@@ -1,5 +1,5 @@
 ## Using linear and natural cubic (regression) splines, SITAR, and latent trajectory models to characterise nonlinear longitudinal growth trajectories in cohort studies 
-Ahmed Elhakeem, Rachael Hughes, Kate Tilling, Diana Cousminer, Stefan Jackowski, Tim Cole, Alex Kwong, Zheyuan Li, Struan Grant, Adam Baxter-Jones, Babette Zemel, Deborah Lawlor: https://www.medrxiv.org/content/10.1101/2021.05.26.21257519v1
+Ahmed Elhakeem, Rachael Hughes, Kate Tilling, Diana Cousminer, Stefan Jackowski, Tim Cole, Alex Kwong, Zheyuan Li, Struan Grant, Adam Baxter-Jones, Babette Zemel, Deborah Lawlor: BMC Med Res Methodol. 2022: doi: 10.1186/s12874-022-01542-8
 
 This page contains the R analysis code used for the paper and the example analysis dataset, the files are described below:
 
