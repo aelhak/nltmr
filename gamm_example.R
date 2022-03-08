@@ -83,3 +83,20 @@ pdf("results/Fig8_gamm.pdf", width = 5, height = 6)
 gamm_curve_pbmas / gamm_pbmas_vel_plot
 
 dev.off()
+
+#### FACTOR SMOOTH HIERARCHICAL GAM APPROACH ####
+# FIXED AND RANDOM EFFECTS P-SPLINE SMOOTHING, EXAMPLE ON PBMAS FEMALES
+## FOR MORE DETAILS SEE https://peerj.com/articles/6876/
+
+pbmas_f$id_grp <- as.factor(pbmas_f$id)
+
+gamm_pbmas_f <- gam(
+  tblh_bmc_ ~ s(sqrt(age), bs = 'ps', k = 6) + 
+    s(sqrt(age), id_grp, k = 4, bs = c("fs")) + 
+    s(id_grp, bs = 're'), data = pbmas_f, 
+  method = "REML")
+
+hgam_pspline_curve_pbmas_f <- predict_gam(
+  gamm_pbmas_f, exclude_terms = c("s(id_grp)", "s(sqrt(age),id_grp)")) %>% ggplot(
+    aes(x = age, y = fit, ymin = fit-(1.96*se.fit), ymax = fit+(1.96*se.fit))) + 
+  geom_line() + geom_ribbon(alpha=0.3) + theme_classic()
